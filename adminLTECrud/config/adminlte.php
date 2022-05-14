@@ -248,7 +248,7 @@ return [
         ],
         [
             'text'        => 'Temas',
-            'route'         => 'tema.index',
+            'route'         => 'temas.index',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',

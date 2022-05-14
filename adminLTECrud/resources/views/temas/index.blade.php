@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Hola mundo</h1>
-    <button type="button" class="btn btn-primary">Agregar Tema</button>
+    <button type="button" class="btn btn-primary"><a class="text-white text-decoration-none fw-bolder" href="{{route('temas.create')}}">AGREGAR TEMAS</a></button>
     <table class="table table-dark">
   <thead >
     <tr>
@@ -22,15 +22,15 @@
     </tr>
   </thead>
   <tbody>
-    @foreach ($temas as $temitas)
+    @foreach ($temas as $tema)
         <tr class="table-active"> 
-        <td>{{$temitas->id}}</td>
-        <td>{{$temitas->nombre}}</td>
-        <td>{{$temitas->categoria}}</td>
+        <td>{{$tema->id}}</td>
+        <td>{{$tema->nombre}}</td>
+        <td>{{$tema->categoria}}</td>
         <td>
-          <a href="">{{$temitas->id}}</a>
+          <a href="{{route('temas.edit',$tema->id)}}">Editar</a>
         </td>
-        <td>{{$temitas->id}}</td>
+        <td>{{$tema->id}}</td>
         </tr>
          
         

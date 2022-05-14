@@ -25,7 +25,7 @@ Route::get('/mundo', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource("/tema","TemaController");
+Route::resource("/temas","TemaController");
 
 /* Route::get("mostrarTema",function(){
     return view('tema.index');

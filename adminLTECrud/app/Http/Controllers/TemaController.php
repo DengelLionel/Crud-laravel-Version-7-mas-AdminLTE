@@ -16,7 +16,7 @@ class TemaController extends Controller
     public function index()
     {
         $temas=tema::all();
-        return view("tema.index",compact("temas"));
+        return view("temas.index",compact("temas"));
     }
 
     /**
@@ -26,7 +26,8 @@ class TemaController extends Controller
      */
     public function create()
     {
-        //
+        $tema= new tema();
+        return view("temas.create",compact("tema"));
     }
 
     /**
@@ -37,7 +38,17 @@ class TemaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    $request->validate([
+            "nombre"=>"required",
+            "categoria"=>"required"
+        ]);
+        $temaso= new tema([
+            "nombre"=>$request->get("nombre"),
+            "categoria"=>$request->get("categoria")
+
+        ]);
+        $temaso->save();
+        return redirect()->route("temas.index");
     }
 
     /**
@@ -59,7 +70,7 @@ class TemaController extends Controller
      */
     public function edit(tema $tema)
     {
-        //
+        return view('temas.create',compact('tema'));
     }
 
     /**
@@ -69,9 +80,10 @@ class TemaController extends Controller
      * @param  \App\tema  $tema
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tema $tema)
+    public function update(Request $request, tema $temas)
     {
-        //
+        $temas->save();
+       return redirect()->route("temas.index");
     }
 
     /**
