@@ -1,6 +1,10 @@
-@extends('layouts.app')
-
+@extends('adminlte::page')
+@section('title', 'Crud Laravel v7')
 @section('content')
+@section('content')
+    <p>Welcome to this beautiful admin panel.</p>
+    <a href="{route(tema.mostrarTema)}">Entrar</a>
+@stop
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

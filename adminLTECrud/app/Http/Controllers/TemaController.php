@@ -12,12 +12,11 @@ class TemaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function mostrarTema(){
-        return view("/Tema","crud");
-    }
+  
     public function index()
     {
-        //
+        $temas=tema::all();
+        return view("tema.index",compact("temas"));
     }
 
     /**

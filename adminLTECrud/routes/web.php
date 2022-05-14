@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,14 @@ Route::get('/', function () {
 });
 
 Route::get('/mundo', function () {
-    return view('/Tema','crud');
+    return view('Tema.crud');
 });
-/* Auth::routes(); */
+ Auth::routes(); 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource("/tema","TemaController");
-Route::get("/tema/mostrarTema","TemaController@mostrarTema")->name("mostrarTema");
+
+/* Route::get("mostrarTema",function(){
+    return view('tema.index');
+})->name("mostrarTema"); */
