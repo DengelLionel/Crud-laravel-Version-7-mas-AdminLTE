@@ -30,7 +30,14 @@
         <td>
           <a href="{{route('temas.edit',$tema->id)}}">Editar</a>
         </td>
-        <td>{{$tema->id}}</td>
+        <form action="{{route('temas.destroy',$tema->id)}}" method="POST">
+        <td>
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+        
+        </td>
+        </form>
         </tr>
          
         
